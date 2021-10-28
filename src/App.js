@@ -13,10 +13,7 @@ class App extends Component {
   }
 
   searchFunction() {
-    let input = document.getElementsByClassName('textBar').value;
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('testing');
-
+    //search function
   }
 
   async componentDidMount() {
