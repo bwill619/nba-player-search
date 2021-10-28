@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = 'https://www.balldontlie.io/api/v1/players?search=lebron'
+    const url = 'https://www.balldontlie.io/api/v1/players'
     let result = null;
     try {
       result = await axios(url, {
