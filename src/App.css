@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.nbaTitle {
+  color: blue;
+}
+
+.playerTable{
+  width: 100%;
+}
+table,th,td {
+  border: 1px solid black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
