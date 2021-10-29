@@ -64,7 +64,7 @@ class App extends Component {
           <input type="text" class="textBar" name ="search"></input>
           <input type="button" class="playerButton" onclick = "searchFunction()" value="Search"></input>
         </form>
-        <ul className="tessting">
+        <ul className="testing">
           {mappedArray}
           </ul>
       </body>
