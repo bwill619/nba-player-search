@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const url = 'https://www.balldontlie.io/api/v1/players'
+    const url = 'https://www.balldontlie.io/api/v1/players?search=durant'
     let result = null;
     try {
       result = await axios(url, {
@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({players : result.data.data})
   }
 
-
+  
   render(){
     const{players} = this.state;
     console.log({players})
