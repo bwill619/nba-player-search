@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      players:[]
+      players:[],
     }
     this.searchFunction = this.searchFunction.bind(this);
   }
