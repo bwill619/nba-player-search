@@ -14,10 +14,28 @@ class App extends Component {
 
   searchFunction() {
     //search function
+    var input, filter, table, tr, td, i, textValue;
+    input = document.getElementById("textBar");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("playerTable");
+    tr = document.getElementsByTagName("tr");
+
+    for(i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if(td) {
+        textValue = td.textContent || td.innerText;
+        if(textValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        }
+        else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
   }
 
   async componentDidMount() {
-    const url = 'https://www.balldontlie.io/api/v1/players?search=durant'
+    const url = 'https://www.balldontlie.io/api/v1/players'
     let result = null;
     try {
       result = await axios(url, {
@@ -37,7 +55,7 @@ class App extends Component {
     console.log({players})
     let mappedArray = (players).map((players) => {
       return(
-        <table class="playerTable">
+        <table class="playerTable" id="playerTable">
           <tr>
             <th>First Name</th>
             <th>Last Name</th>
@@ -61,7 +79,7 @@ class App extends Component {
       <body class="appBody">
         <form>
           <label for="search" class="searchLabel">Search For Player:</label>
-          <input type="text" class="textBar" name ="search"></input>
+          <input type="text" class="textBar" id="textBar" onkeyup="searchFunction()" name ="search"></input>
           <input type="button" class="playerButton" onclick = "searchFunction()" value="Search"></input>
         </form>
         <ul className="testing">
